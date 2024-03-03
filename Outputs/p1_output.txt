@@ -1,0 +1,37 @@
+Enter the number of processes: 5
+
+Process 1
+Enter PID: 2
+Enter burst time: 4
+Enter arrival time: 2
+
+Process 2
+Enter PID: 4
+Enter burst time: 12
+Enter arrival time: 4
+
+Process 3
+Enter PID: 0
+Enter burst time: 2
+Enter arrival time: 0
+
+Process 4
+Enter PID: 3
+Enter burst time: 9
+Enter arrival time: 3
+
+Process 5
+Enter PID: 1
+Enter burst time: 6
+Enter arrival time: 1
+
+The execution order is
+PID     ArrivalTime     BurstTime       CompletionTime  WaitingTime     TurnaroundTime
+0       0               2               2               0               2
+1       1               6               8               1               7
+2       2               4               12              6               10
+3       3               9               21              9               18
+4       4               12              33              17              29
+
+Average waiting time = 6.60
+Average turnarround time = 13.20
