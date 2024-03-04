@@ -2,9 +2,9 @@
 #define MAX_SIZE 100
 
 int main() {
-    int burst_times[MAX_SIZE], completion_times[MAX_SIZE], pids[MAX_SIZE],
-        waiting_times[MAX_SIZE], turnaround_times[MAX_SIZE],
-        arrival_times[MAX_SIZE];
+    int pids[MAX_SIZE], arrival_times[MAX_SIZE], burst_times[MAX_SIZE],
+        completion_times[MAX_SIZE], waiting_times[MAX_SIZE],
+        turnaround_times[MAX_SIZE];
     int n, i, j, temp, total_wt_time, total_ta_time;
     float avg_wt_time, avg_ta_time;
 
@@ -23,6 +23,10 @@ int main() {
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - 1 - i; j++) {
             if (arrival_times[j] > arrival_times[j + 1]) {
+                temp = pids[j];
+                pids[j] = pids[j + 1];
+                pids[j + 1] = temp;
+
                 temp = arrival_times[j];
                 arrival_times[j] = arrival_times[j + 1];
                 arrival_times[j + 1] = temp;
@@ -30,10 +34,6 @@ int main() {
                 temp = burst_times[j];
                 burst_times[j] = burst_times[j + 1];
                 burst_times[j + 1] = temp;
-
-                temp = pids[j];
-                pids[j] = pids[j + 1];
-                pids[j + 1] = temp;
             }
         }
     }
@@ -41,6 +41,7 @@ int main() {
     completion_times[0] = burst_times[0];
     for (i = 1; i < n; i++)
         completion_times[i] = completion_times[i - 1] + burst_times[i];
+
     total_ta_time = total_wt_time = 0;
     for (i = 0; i < n; i++) {
         turnaround_times[i] = completion_times[i] - arrival_times[i];
