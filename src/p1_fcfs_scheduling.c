@@ -60,7 +60,7 @@ int main() {
                turnaround_times[i]);
     }
     printf("\nAverage waiting time = %0.2f\n", avg_wt_time);
-    printf("Average turnarround time = %0.2f\n", avg_ta_time);
+    printf("Average turnaround time = %0.2f\n", avg_ta_time);
 
     return 0;
 }
