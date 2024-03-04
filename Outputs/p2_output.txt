@@ -1,0 +1,23 @@
+Enter the number of processes: 4
+
+Process 1
+Enter burst time: 23
+
+Process 2
+Enter burst time: 2
+
+Process 3
+Enter burst time: 43
+
+Process 4
+Enter burst time: 12
+
+The execution order is
+PID     BurstTime       WaitingTime     TurnaroundTime
+2       2               0               2
+4       12              2               14
+1       23              14              37
+3       43              37              80
+
+Average waiting time = 13.25
+Average turnaround time = 33.25
