@@ -1,0 +1,16 @@
+P2 SJF Scheduling
+
+Step 1: START
+Step 2: Read the number of processes.
+Step 3: Read the burst time of each process.
+Step 4: Sort the processes in ascending order of their burst times.
+Step 5: Calculate turnaround time of each process as;
+        turnaround time = turnaround time of previous process
+                          + burst time of current process
+Step 7: Calculate waiting time of each process as;
+        waiting time = turnaround time - burst time
+Step 8: Calculate the average waiting time and average turnaround time
+        of all processes.
+Step 9: Print the order of execution with the calculated values.
+Step 10: Print the average waiting time and average turnaround time.
+Step 11: STOP
