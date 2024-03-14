@@ -1,0 +1,17 @@
+P3 Priority Scheduling
+
+Step 1: START
+Step 2: Read the number of processes.
+Step 3: For each process, read its priority and burst time
+        and store them in respective arrays.
+Step 4: Sort the processes in descending order of their priorities.
+Step 5: Calculate turnaround time of each process as;
+        turnaround time = turnaround time of previous process
+                          + burst time of current process
+Step 6: Calculate waiting time of each process as;
+        waiting time = turnaround time - burst time
+Step 7: Calculate the average waiting time and average turnaround time
+        of all processes.
+Step 8: Print the order of execution with the calculated values.
+Step 9: Print the average waiting time and average turnaround time.
+Step 10: STOP
