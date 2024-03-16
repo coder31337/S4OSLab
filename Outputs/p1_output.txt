@@ -34,4 +34,4 @@ PID     ArrivalTime     BurstTime       CompletionTime  WaitingTime     Turnarou
 4       4               12              33              17              29
 
 Average waiting time = 6.60
-Average turnarround time = 13.20
+Average turnaround time = 13.20
