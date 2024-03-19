@@ -4,7 +4,7 @@
 int main() {
     int burst_times[MAX_SIZE], rem_burst_times[MAX_SIZE],
         waiting_times[MAX_SIZE], turnaround_times[MAX_SIZE];
-    int n, i, j, t_slice, count, exec_time, ta_time, total_wt_time,
+    int n, i, j, t_slice, done, curr_time, total_wt_time,
         total_ta_time;
     float avg_wt_time, avg_ta_time;
 
@@ -19,30 +19,28 @@ int main() {
     printf("\nEnter time slice: ");
     scanf("%d", &t_slice);
 
-    count = 0;
-    ta_time = 0;
-    while (count < n) {
-        count = 0;
+    done = 0;
+    curr_time = 0;
+    while (!done) {
+        done = 1;
         for (i = 0; i < n; i++) {
-            if (rem_burst_times[i] == 0) {
-                count++;
-                continue;
+            if (rem_burst_times[i] > 0) {
+                done = 0;
+                if (rem_burst_times[i] > t_slice) {
+                    curr_time += t_slice;
+                    rem_burst_times[i] -= t_slice;
+                } else {
+                    curr_time += rem_burst_times[i];
+                    waiting_times[i] = curr_time - burst_times[i];
+                    rem_burst_times[i] = 0;
+                }
             }
-            if (rem_burst_times[i] > t_slice) {
-                exec_time = t_slice;
-                rem_burst_times[i] -= t_slice;
-            } else if (rem_burst_times[i] > 0) {
-                exec_time = rem_burst_times[i];
-                rem_burst_times[i] = 0;
-            }
-            ta_time += exec_time;
-            turnaround_times[i] = ta_time;
         }
     }
 
     total_ta_time = total_wt_time = 0;
     for (i = 0; i < n; i++) {
-        waiting_times[i] = turnaround_times[i] - burst_times[i];
+        turnaround_times[i] = burst_times[i] + waiting_times[i];
         total_wt_time += waiting_times[i];
         total_ta_time += turnaround_times[i];
     }
