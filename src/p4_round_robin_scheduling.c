@@ -47,7 +47,6 @@ int main() {
     avg_wt_time = (float)total_wt_time / n;
     avg_ta_time = (float)total_ta_time / n;
 
-    printf("\nThe execution order is\n");
     printf("PID\tBurstTime\tWaitingTime\tTurnaroundTime\n");
     for (i = 0; i < n; i++) {
         printf("%d\t%d\t\t%d\t\t%d\n", i + 1, burst_times[i], waiting_times[i],
