@@ -16,6 +16,6 @@ Step 6: Calculate turnaround time of each process as;
         turnaround time = burst time + waiting time
 Step 7: Calculate the average waiting time and average turnaround time
         of all processes.
-Step 8: Print the order of execution with the calculated values.
+Step 8: Print the calculated values.
 Step 9: Print the average waiting time and average turnaround time.
 Step 10: STOP
