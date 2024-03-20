@@ -11,7 +11,6 @@ Enter burst time: 3
 
 Enter time slice: 4
 
-The execution order is
 PID     BurstTime       WaitingTime     TurnaroundTime
 1       24              6               30
 2       3               4               7
