@@ -1,0 +1,21 @@
+P4 Round Robin Scheduling
+
+Step 1: START
+Step 2: Read the number of processes.
+Step 3: Read the burst time of each process.
+Step 4: Read the value of time slice.
+Step 5: For all processes,
+            If remaining burst time of a process is greater than time slice,
+                Add time slice to current time.
+                Subtract time slice from remaining burst time.
+            Else
+                Add remaining burst time to current time.
+                Set remaining burst time to 0.
+        Repeat till remaining burst time of all processes is 0.
+Step 6: Calculate turnaround time of each process as;
+        turnaround time = burst time + waiting time
+Step 7: Calculate the average waiting time and average turnaround time
+        of all processes.
+Step 8: Print the order of execution with the calculated values.
+Step 9: Print the average waiting time and average turnaround time.
+Step 10: STOP
